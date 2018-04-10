@@ -16,9 +16,8 @@ namespace SeleniumNUnitParam
         public void GoogleTest()
         {
             Driver.Navigate().GoToUrl("http://www.google.com");
-            //Driver.FindElement(By.Name("q")).SendKeys("Selenium");
-            Driver.SendKeys("Selenium");
-            Driver.SendKeys(Keys.Enter);
+            Driver.FindElement(By.Name("q")).SendKeys("Selenium");
+            Driver.FindElement(By.Name("q")).SendKeys(Keys.Enter);
             System.Threading.Thread.Sleep(5000);
             //Driver.FindElement(By.Name("btnK")).Click();
             Assert.That(Driver.PageSource.Contains("Selenium"), Is.EqualTo(true),
